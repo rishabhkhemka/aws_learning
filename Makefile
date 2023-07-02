@@ -16,3 +16,6 @@ start-dynamodb:
 stop-dynamodb:
 	docker stop dynamodb-local
 	docker rm dynamodb-local
+
+docker-clean:
+	docker rm -f $$(docker ps -a -q) || true

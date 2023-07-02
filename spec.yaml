@@ -3,14 +3,19 @@ info:
   title: User Contact API
   description: APIs for managing user contact information
   version: 1.0.0
-servers:
-  - url: https://api.localhost.com/v1
 
 paths:
   /users:
     get:
       summary: Get all users
       description: Returns a list of all users.
+      parameters:
+        - name: sorted
+          in: query
+          required: false
+          description: Flag to enable alphabetical sorting based on firstName
+          schema:
+            type: boolean
       responses:
         '200':
           description: Successful response
@@ -37,12 +42,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
               
-  /users/{userId}:
+  /user/{userID}:
     get:
       summary: Get a user by ID
       description: Returns the user with the specified ID.
       parameters:
-        - name: userId
+        - name: userID
           in: path
           required: true
           description: ID of the user
@@ -60,7 +65,7 @@ paths:
       summary: Update a user
       description: Updates the specified user's information.
       parameters:
-        - name: userId
+        - name: userID
           in: path
           required: true
           description: ID of the user
@@ -80,14 +85,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
               
+  /users/delete:
     delete:
       summary: Delete a user by ID
       description: Deletes the user with the specified ID.
       parameters:
-        - name: userId
-          in: path
-          required: true
+        - name: userID
+          in: query
+          required: false
           description: ID of the user
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          required: false
+          description: firstName of the user
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: false
+          description: lastName of the user
           schema:
             type: string
       responses:
@@ -97,7 +115,7 @@ paths:
   /users/search:
     get:
       summary: Search users by name
-      description: Returns a list of users matching the specified name.
+      description: Returns a list of users matching the specified firstName or lastName
       parameters:
         - name: name
           in: query
@@ -120,7 +138,7 @@ components:
     User:
       type: object
       properties:
-        id:
+        ID:
           type: string
         firstName:
           type: string
@@ -133,7 +151,7 @@ components:
         emailAddress:
           type: string
       required:
-        - id
+        - ID
         - firstName
         - lastName
         - address
