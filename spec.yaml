@@ -25,6 +25,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+        '500':
+          description: Internal server error
+
     post:
       summary: Create a user
       description: Creates a new user.
@@ -41,16 +44,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-              
+        '400':
+          description: Invalid request
+        '500':
+          description: Internal server error
+
   /user/{userID}:
     get:
-      summary: Get a user by ID
-      description: Returns the user with the specified ID.
+      summary: Get a user by userID
+      description: Returns the user with the specified userID.
       parameters:
         - name: userID
           in: path
           required: true
-          description: ID of the user
+          description: userID of the user
           schema:
             type: string
       responses:
@@ -60,7 +67,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-              
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
+
     patch:
       summary: Update a user
       description: Updates the specified user's information.
@@ -68,7 +79,7 @@ paths:
         - name: userID
           in: path
           required: true
-          description: ID of the user
+          description: userID of the user
           schema:
             type: string
       requestBody:
@@ -84,16 +95,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-              
+        '400':
+          description: Invalid request
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
+
   /users/delete:
     delete:
-      summary: Delete a user by ID
-      description: Deletes the user with the specified ID.
+      summary: Delete a user by userID
+      description: Deletes the user with the specified userID.
       parameters:
         - name: userID
           in: query
           required: false
-          description: ID of the user
+          description: userID of the user
           schema:
             type: string
         - name: firstName
@@ -111,6 +128,12 @@ paths:
       responses:
         '204':
           description: User deleted successfully
+        '400':
+          description: Invalid request
+        '404':
+          description: User not found
+        '500':
+          description: Internal server error
 
   /users/search:
     get:
@@ -132,13 +155,17 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid request
+        '500':
+          description: Internal server error
 
 components:
   schemas:
     User:
       type: object
       properties:
-        ID:
+        userID:
           type: string
         firstName:
           type: string
@@ -151,7 +178,7 @@ components:
         emailAddress:
           type: string
       required:
-        - ID
+        - userID
         - firstName
         - lastName
         - address
