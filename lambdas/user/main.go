@@ -335,8 +335,6 @@ func UpdateUserByUserID(userID string, body []byte) (events.APIGatewayProxyRespo
 }
 
 func Delegator(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	// get request with userID in path param
-
 	switch request.HTTPMethod {
 	case "GET":
 		if request.PathParameters == nil {
