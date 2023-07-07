@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"os"
 	"sort"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -13,7 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 )
 
-var tableName = aws.String("users-contact-info")
+var tableName = aws.String(os.Getenv("TABLE_NAME"))
 
 func getDB() *dynamodb.DynamoDB {
 	sess, err := session.NewSession()
@@ -39,7 +40,7 @@ func FetchAllUsers() []User {
 
 	// Create a DynamoDB scan input
 	input := &dynamodb.ScanInput{
-		TableName: aws.String("users-contact-info"),
+		TableName: tableName,
 	}
 
 	// Perform the scan operation

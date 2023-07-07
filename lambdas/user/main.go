@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -14,7 +15,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 )
 
-var tableName = aws.String("users-contact-info")
+var tableName = aws.String(os.Getenv("TABLE_NAME"))
 
 func getDB() *dynamodb.DynamoDB {
 	sess, err := session.NewSession()

@@ -1,2 +1,6 @@
 dynamodb_local_data/
 *zip
+*/main
+*.tfstate*
+.terraform/
+*.lock*
