@@ -25,7 +25,7 @@ build-lambdas:
 	find ./lambdas/ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "{}" && GOOS=linux GOARCH=amd64 go build -o main main.go && zip -r "../../$(basename "{}").zip" ./main' \;
 
 clean-lambdas:
-	rm *.zip || true
+	rm ./lambdas/*.zip
 	find ./lambdas -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "{}" && rm main' \;
 
 upload-testdata:
