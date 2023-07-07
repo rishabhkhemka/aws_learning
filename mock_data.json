@@ -1,85 +1,124 @@
 {
-    "User": [
-      {
-        "ID": "1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "address": "123 Main St",
-        "mobileNumber": "1234567890",
-        "emailAddress": "johndoe@example.com"
-      },
-      {
-        "ID": "2",
-        "firstName": "Jane",
-        "lastName": "Smith",
-        "address": "456 Elm St",
-        "mobileNumber": "9876543210",
-        "emailAddress": "janesmith@example.com"
-      },
-      {
-        "ID": "3",
-        "firstName": "Michael",
-        "lastName": "Johnson",
-        "address": "789 Oak St",
-        "mobileNumber": "4561237890",
-        "emailAddress": "michaeljohnson@example.com"
-      },
-      {
-        "ID": "4",
-        "firstName": "Emily",
-        "lastName": "Brown",
-        "address": "321 Maple St",
-        "mobileNumber": "7894561230",
-        "emailAddress": "emilybrown@example.com"
-      },
-      {
-        "ID": "5",
-        "firstName": "David",
-        "lastName": "Wilson",
-        "address": "654 Pine St",
-        "mobileNumber": "3217894560",
-        "emailAddress": "davidwilson@example.com"
-      },
-      {
-        "ID": "6",
-        "firstName": "Sarah",
-        "lastName": "Taylor",
-        "address": "987 Cedar St",
-        "mobileNumber": "6547891230",
-        "emailAddress": "sarahtaylor@example.com"
-      },
-      {
-        "ID": "7",
-        "firstName": "Christopher",
-        "lastName": "Miller",
-        "address": "246 Spruce St",
-        "mobileNumber": "9871234560",
-        "emailAddress": "christophermiller@example.com"
-      },
-      {
-        "ID": "8",
-        "firstName": "Olivia",
-        "lastName": "Anderson",
-        "address": "579 Birch St",
-        "mobileNumber": "1237894560",
-        "emailAddress": "oliviaanderson@example.com"
-      },
-      {
-        "ID": "9",
-        "firstName": "Daniel",
-        "lastName": "Thomas",
-        "address": "864 Willow St",
-        "mobileNumber": "7891234560",
-        "emailAddress": "danielthomas@example.com"
-      },
-      {
-        "ID": "10",
-        "firstName": "Sophia",
-        "lastName": "Harris",
-        "address": "135 Fir St",
-        "mobileNumber": "4567891230",
-        "emailAddress": "sophiaharris@example.com"
+  "user_contact_info_tf": [
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "1"},
+          "firstName": {"S": "John"},
+          "lastName": {"S": "Doe"},
+          "address": {"S": "123 Main St"},
+          "mobileNumber": {"S": "1234567890"},
+          "emailAddress": {"S": "johndoe@example.com"}
+        }
       }
-    ]
-  }
-  
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "2"},
+          "firstName": {"S": "Jane"},
+          "lastName": {"S": "Smith"},
+          "address": {"S": "456 Elm St"},
+          "mobileNumber": {"S": "9876543210"},
+          "emailAddress": {"S": "janesmith@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "3"},
+          "firstName": {"S": "Michael"},
+          "lastName": {"S": "Johnson"},
+          "address": {"S": "789 Oak St"},
+          "mobileNumber": {"S": "4561237890"},
+          "emailAddress": {"S": "michaeljohnson@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "4"},
+          "firstName": {"S": "Emily"},
+          "lastName": {"S": "Brown"},
+          "address": {"S": "321 Maple St"},
+          "mobileNumber": {"S": "7894561230"},
+          "emailAddress": {"S": "emilybrown@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "5"},
+          "firstName": {"S": "David"},
+          "lastName": {"S": "Wilson"},
+          "address": {"S": "654 Pine St"},
+          "mobileNumber": {"S": "3217894560"},
+          "emailAddress": {"S": "davidwilson@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "6"},
+          "firstName": {"S": "Sarah"},
+          "lastName": {"S": "Taylor"},
+          "address": {"S": "987 Cedar St"},
+          "mobileNumber": {"S": "6547891230"},
+          "emailAddress": {"S": "sarahtaylor@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "7"},
+          "firstName": {"S": "Christopher"},
+          "lastName": {"S": "Miller"},
+          "address": {"S": "246 Spruce St"},
+          "mobileNumber": {"S": "9871234560"},
+          "emailAddress": {"S": "christophermiller@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "8"},
+          "firstName": {"S": "Olivia"},
+          "lastName": {"S": "Anderson"},
+          "address": {"S": "579 Birch St"},
+          "mobileNumber": {"S": "1237894560"},
+          "emailAddress": {"S": "oliviaanderson@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "9"},
+          "firstName": {"S": "Daniel"},
+          "lastName": {"S": "Thomas"},
+          "address": {"S": "864 Willow St"},
+          "mobileNumber": {"S": "7891234560"},
+          "emailAddress": {"S": "danielthomas@example.com"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userID": {"S": "10"},
+          "firstName": {"S": "Sophia"},
+          "lastName": {"S": "Harris"},
+          "address": {"S": "135 Fir St"},
+          "mobileNumber": {"S": "4567891230"},
+          "emailAddress": {"S": "sophiaharris@example.com"}
+        }
+      }
+    }
+  ]
+}
